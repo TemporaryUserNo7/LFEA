@@ -5,11 +5,12 @@ Code for the paper "Linear Functionality Equivalence Attack against Deep Neural 
 PyTorch>=1.10.2
 CUDA required
 
-#### ./data : Where the dataset is stored by default.
-#### ./checkpoint : Where the DNN checkpoints are stored by default.
-#### Autoencoder.py : The implementation for LFEA and NeuronMap on an autoencoder.
-#### LeNet.py : The implementation for LFEA and NeuronMap on an LeNet.
-#### ResNet.py : The implementation for LFEA and NeuronMap on an ResNet.
+## File structure
+> ./data : Where the dataset is stored by default.
+> ./checkpoint : Where the DNN checkpoints are stored by default.
+> Autoencoder.py : The implementation for LFEA and NeuronMap on an autoencoder.
+> LeNet.py : The implementation for LFEA and NeuronMap on an LeNet.
+> ResNet.py : The implementation for LFEA and NeuronMap on an ResNet.
 
 For illustration, the watermarking schemes implemented in respective scripts are their simplified version. 
 
