@@ -65,3 +65,5 @@ print(DSVerify(AE1,V3))
 print(DSVerify(AE5,V3))
 print(DSVerify(AE9,V3))
 ```
+
+For LeNet and ResNet, the workflow is similar. 
