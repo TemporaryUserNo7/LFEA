@@ -38,3 +38,30 @@ AE5=MaskAE23(AE5t,Q52)
 ```
 
 In which `GenQ` produces $\phi\in\Phi^{+}$ and `MaskAEXX` conducts LFEA. 
+
+Then the watermark verifiers (in their simplified version, yet w.l.o.g) are built.
+
+```python
+V2=UCVerifier()
+V2.fit(AE1)
+T=torch.randn(size=(100,1024))
+V3=DSVerifier(T)
+V3.fit(AE1)
+V4=DJVerifier(T)
+V4.fit(AE1)
+```
+
+Finally, we applied NeuroMap to the model undertaking LFEA.
+
+```python
+Z=torch.randn(size=(100,1024))
+AE9=NM12(AE1,NM23(AE1,AE3,Z,device),Z,device)
+```
+
+What left is testing.
+
+```python
+print(DSVerify(AE1,V3))
+print(DSVerify(AE5,V3))
+print(DSVerify(AE9,V3))
+```
