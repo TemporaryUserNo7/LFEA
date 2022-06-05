@@ -17,3 +17,14 @@ For illustration, the watermarking schemes implemented in respective scripts are
 As an example, to test the original paper's justifications on the autoencoder DNN, run 
 
 `python Autoencoder.py`
+
+The owner's DNN `AE1` is firstly trained.
+
+```python
+AE1=MyAE()
+#AE1.load_state_dict(torch.load("checkpoint/mnistAE2.pt"))
+device=torch.device("cuda:1")
+AE1=AE1.to(device)
+for epoch in range(E):
+    train(AE1,train_loader,device,True)
+```
