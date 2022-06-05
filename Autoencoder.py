@@ -372,12 +372,10 @@ print("MNIST Data loaded.")
 
 E=10
 AE1=MyAE()
-#AE1.load_state_dict(torch.load("checkpoint/mnistAE2.pt"))
 device=torch.device("cuda:1")
 AE1=AE1.to(device)
 for epoch in range(E):
     train(AE1,train_loader,device,True)
-    torch.save(AE1.state_dict(),"checkpoint/mnistAE2.pt")
 
 AE1=AE1.to(device)
 Q3=GenQ(328)
