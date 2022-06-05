@@ -22,9 +22,19 @@ The owner's DNN `AE1` is firstly trained.
 
 ```python
 AE1=MyAE()
-#AE1.load_state_dict(torch.load("checkpoint/mnistAE2.pt"))
 device=torch.device("cuda:1")
 AE1=AE1.to(device)
 for epoch in range(E):
     train(AE1,train_loader,device,True)
 ```
+
+Then LFEA is applied on its layers where the watermark information would be involved. 
+
+```python
+Q51=GenQ(328)
+Q52=GenQ(75)
+AE5t=MaskAE12(AE1,Q51)
+AE5=MaskAE23(AE5t,Q52)
+```
+
+In which `GenQ` produces $\phi\in\Phi^{+}$ and `MaskAEXX` conducts LFEA. 
