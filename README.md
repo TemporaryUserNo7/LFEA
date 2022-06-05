@@ -14,4 +14,5 @@ CUDA required
 For illustration, the watermarking schemes implemented in respective scripts are their simplified version. 
 
 As an example, to test the original paper's justifications on the autoencoder DNN, run 
-~python Autoencoder.py~
+
+`python Autoencoder.py`
