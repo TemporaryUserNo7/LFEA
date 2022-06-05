@@ -51,11 +51,12 @@ V4=DJVerifier(T)
 V4.fit(AE1)
 ```
 
-Finally, we applied NeuroMap to the model undertaking LFEA.
+Finally, we applied NeuroMap to the model undertaking LFEA. 
+Notice that NeuronMap is only curious about the responses from two layers (where we embedded watermarks). 
 
 ```python
 Z=torch.randn(size=(100,1024))
-AE9=NM12(AE1,NM23(AE1,AE3,Z,device),Z,device)
+AE9=NM12(AE1,NM23(AE1,AE5,Z,device),Z,device)
 ```
 
 What left is testing.
